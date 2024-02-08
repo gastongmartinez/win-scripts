@@ -57,6 +57,7 @@ $AppsWG = @(
     #"Alacritty"
     "Node.js"
     "Yarn.Yarn"
+    "GoLang.Go"
     #"Oracle VM VirtualBox"
     "WinRAR"
     "Meson Build System"
