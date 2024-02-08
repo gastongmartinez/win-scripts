@@ -90,6 +90,8 @@ Move-Item -Path "$PSScriptRoot\LayoutModification.xml" -Destination "C:\Users\De
 ((Get-Content -path C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\LayoutModification.xml -Raw) -replace 'Usuario', $env:UserName) | Set-Content -Path C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\LayoutModification.xml
 
 ######################## TODO Agregar Rust###############################
+Invoke-WebRequest -Uri https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe -OutFile rustup-init.exe
+Invoke-Expression ".\rustup-init.exe -y"
 
 # Lang Servers
 go install golang.org/x/tools/gopls@latest
