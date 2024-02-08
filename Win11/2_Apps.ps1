@@ -12,6 +12,7 @@ $AppsCT = @(
     "ripgrep"
     "fd"
     "nerd-fonts-jetbrainsmono"
+    "llvm"
 )
 
 ForEach ($App in $AppsCT) {
@@ -58,7 +59,6 @@ $AppsWG = @(
     "Yarn.Yarn"
     #"Oracle VM VirtualBox"
     "WinRAR"
-    "LLVM"
     "Meson Build System"
     #"PyCharm Professional Edition"
     #"DataGrip"
