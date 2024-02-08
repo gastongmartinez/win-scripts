@@ -91,9 +91,20 @@ Get-ChildItem -Path C:\Users\Public\Desktop -Include *.lnk -File -Recurse | ForE
 Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\Shell\Bags\1\Desktop" -Name FFlags -Value "1075839525"
 
 # Taskbar
-Move-Item -Path "$PSScriptRoot\LayoutModification.xml" -Destination "C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\LayoutModification.xml"   
-
+Move-Item -Path "$PSScriptRoot\LayoutModification.xml" -Destination "C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\LayoutModification.xml"
 ((Get-Content -path C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\LayoutModification.xml -Raw) -replace 'Usuario', $env:UserName) | Set-Content -Path C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\LayoutModification.xml
+
+######################## TODO Agregar Rust###############################
+
+# Lang Servers
+go install golang.org/x/tools/gopls@latest
+go install golang.org/x/tools/cmd/goimports@latest
+go install github.com/go-delve/delve/cmd/dlv@latest
+pip install black 'python-lsp-server[all]' pyright yamllint autopep8
+cargo install taplo-cli --locked
+cargo install stylua
+npm install -g neovim prettier bash-language-server vscode-langservers-extracted emmet-ls typescript typescript-language-server yaml-language-server live-server markdownlint markdownlint-cli dockerfile-language-server-nodejs stylelint js-beautify
+# TODO Agregar Marksman
 
 $SN = Read-Host -Prompt "Se recomienda reiniciar el equipo, desea hacerlo ahora? (S/N): "
 if ( $SN -eq "S" ) {
