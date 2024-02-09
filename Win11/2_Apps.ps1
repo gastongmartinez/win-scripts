@@ -5,7 +5,6 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 Write-Output "Instalando Paquetes"
 # Comentar para omitir
 $AppsCT = @(
-    "jdk8"
     "mpv"
     "filezilla"
     "shellcheck"
@@ -34,6 +33,8 @@ $AppsWG = @(
     "GitHub Desktop"
     "Python.Python.3.12"
     "GoLang.Go"
+    "Amazon.Corretto.17"
+    "Amazon.Corretto.21"
     "Brave.Brave"
     "Google Chrome"
     "qBittorrent.qBittorrent"
