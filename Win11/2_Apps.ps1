@@ -61,7 +61,6 @@ $AppsWG = @(
     #"Microsoft.PowerBI"
     #"Tableau.Public"
     "Rainmeter"
-    "Microsoft.VisualStudio.2022.Community"
     "Microsoft.SQLServerManagementStudio"
     "OO-Software.ShutUp10"
     "Flameshot"
