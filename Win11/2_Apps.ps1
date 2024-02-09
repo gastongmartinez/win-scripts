@@ -12,6 +12,7 @@ $AppsCT = @(
     "fd"
     "nerd-fonts-jetbrainsmono"
     "llvm"
+    "vmware-workstation-player"
 )
 
 ForEach ($App in $AppsCT) {
