@@ -20,7 +20,7 @@ ForEach ($App in $AppsCT) {
     choco install $App -y
 }
 
-Write-Information "Instalando WinGet..."
+Write-Output "Instalando WinGet..."
 Invoke-WebRequest -Uri https://aka.ms/getwinget -OutFile Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
 Add-AppxPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
 
@@ -64,9 +64,7 @@ $AppsWG = @(
     "Microsoft.SQLServerManagementStudio"
     "OO-Software.ShutUp10"
     "Flameshot"
-    "PostgreSQL 16"
     "pgAdmin 4"
-    "Oracle.MySQL"
 )
 
 winget source update
@@ -78,6 +76,10 @@ ForEach ($App in $AppsWG) {
     Write-Output "Instalando $App"
     winget install $App --silent --accept-package-agreements
 }
+
+winget install "Microsoft.VisualStudio.2022.Community" --override "--passive --config $PSScriptRoot\my.vsconfig"
+winget install "PostgreSQL 16" --silent --accept-package-agreements
+winget install "Oracle.MySQL" --silent --accept-package-agreements
 
 # Limpieza Escritorio
 Get-ChildItem -Path $HOME\Desktop -Include *.lnk -File -Recurse | ForEach-Object { $_.Delete() }
