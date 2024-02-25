@@ -73,6 +73,9 @@ ForEach ($App in $AppsWG) {
     winget install $App --silent --accept-package-agreements
 }
 
+# SQL Server
+winget install "Microsoft.SQLServer.2022.Developer" --override "/ENU"
+
 # Limpieza Escritorio
 Get-ChildItem -Path $HOME\Desktop -Include *.lnk -File -Recurse | ForEach-Object { $_.Delete() }
 Get-ChildItem -Path C:\Users\Public\Desktop -Include *.lnk -File -Recurse | ForEach-Object { $_.Delete() }
