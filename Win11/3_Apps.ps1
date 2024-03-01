@@ -47,7 +47,6 @@ $AppsWG = @(
     "Core Temp"
     "Node.js"
     "Yarn.Yarn"
-    "GoLang.Go"
     "WinRAR"
     "Meson Build System"
     #"Apple.iTunes"
